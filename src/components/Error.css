@@ -24,7 +24,7 @@
     transform: translateY(20px);
   }
 }
-@media (max-width: 450px) {
+/* @media (max-width: 450px) {
   svg {
     position: absolute;
     top: 50%;
@@ -32,4 +32,4 @@
     margin-top: -250px;
     margin-left: -190px;
   }
-}
+} */
