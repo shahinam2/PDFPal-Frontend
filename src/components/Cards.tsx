@@ -17,7 +17,8 @@ import {
   IconJpg,
   IconInfoCircle,
 } from "@tabler/icons-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Layout from "./Layout";
 
 const mockdata = [
   {
@@ -30,12 +31,19 @@ const mockdata = [
     title: "Text file to PDF",
     icon: IconFileText,
     color: "indigo",
+    path: "/TextToPdf",
   },
-  { title: "Merge PDFs", icon: IconArrowMerge, color: "blue" },
-  { title: "Split PDF", icon: IconArrowsSplit2, color: "green" },
-  { title: "Rempve PDF Pages", icon: IconFileX, color: "teal" },
-  { title: "PDF to JPG", icon: IconJpg, color: "cyan" },
-  { title: "Coming Soon", icon: IconInfoCircle, color: "pink" },
+  { title: "Merge PDFs", icon: IconArrowMerge, color: "blue", path: "/MergePdf" },
+  { title: "Split PDF", icon: IconArrowsSplit2, color: "green", path: "/SplitPdf" },
+  { title: "Rempve PDF Pages", icon: IconFileX, color: "teal", path: "/RemovePdf" },
+  { title: "PDF to JPG", icon: IconJpg, color: "cyan", path: "/PdfToJpg" },
+  { title: "Coming Soon", icon: IconInfoCircle, color: "pink", path: "#" },
+  {
+    title: "pdf to text",
+    icon: IconInfoCircle,
+    color: "pink",
+    path: "/pdf-to-text",
+  },
   // { title: "Payments", icon: IconCoin, color: "red" },
   // { title: "Cashback", icon: IconCashBanknote, color: "orange" },
 ];
@@ -64,6 +72,8 @@ const useStyles = createStyles((theme) => ({
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
     transition: "all 0.05s ease-in",
+    textDecoration:"none",
+    color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
 
     "&:hover": {
       boxShadow: theme.shadows.md,
@@ -78,38 +88,31 @@ const useStyles = createStyles((theme) => ({
 
 export default function ActionsGrid() {
   const { classes, theme } = useStyles();
-  const navigate = useNavigate();
-
-  const handleClick = (path: string) => {
-    navigate(path);
-  };
 
   const items = mockdata.map((item) => (
-    <UnstyledButton
-      key={item.title}
-      className={classes.item}
-      onClick={() => item.path && handleClick(item.path)}
-    >
+    <Link to={item.path} key={item.title} className={classes.item}>
       <item.icon color={theme.colors[item.color][6]} size="2rem" />
       <Text size="xs" mt={7}>
         {item.title}
       </Text>
-    </UnstyledButton>
+    </Link>
   ));
 
   return (
-    <Card
-      // withBorder
-      radius="md"
-      className={classes.card}
-    >
-      <Group position="apart">
-        <Text className={classes.title}>Services</Text>
-        <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}></Anchor>
-      </Group>
-      <SimpleGrid cols={3} mt="md">
-        {items}
-      </SimpleGrid>
-    </Card>
+    <Layout headerOne>
+      <Card
+        // withBorder
+        radius="md"
+        className={classes.card}
+      >
+        <Group position="apart">
+          <Text className={classes.title}>Services</Text>
+          <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}></Anchor>
+        </Group>
+        <SimpleGrid cols={3} mt="md">
+          {items}
+        </SimpleGrid>
+      </Card>
+    </Layout>
   );
 }
