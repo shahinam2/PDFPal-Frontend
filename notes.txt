@@ -1,0 +1,9 @@
+create home component
+create about me component
+create a component for Multiline input to PDF
+create a component for Text file to PDF
+create a component for Merge PDFs
+create a component for Split PDF
+create a component for Rempve PDF Pages
+create a component for PDF to JPG
+create a component for PDF Zipper

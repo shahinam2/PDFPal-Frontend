@@ -4,11 +4,11 @@ import {
   Header,
   Container,
   Group,
-  Burger,
+  // Burger,
   Button,
   // Image,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+// import { useDisclosure } from "@mantine/hooks";
 // import { MantineLogo } from "@mantine/ds";
 import DarkLogo from "../assets/logos/darkLogo.png";
 import LightLogo from "../assets/logos/lightLogo.png";
@@ -30,11 +30,11 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  burger: {
-    [theme.fn.largerThan("xs")]: {
-      display: "none",
-    },
-  },
+  // burger: {
+  //   [theme.fn.largerThan("xs")]: {
+  //     display: "none",
+  //   },
+  // },
 
   link: {
     display: "block",
@@ -80,7 +80,7 @@ interface HeaderSimpleProps {
 // ];
 
 export function HeaderSimple({ links }: HeaderSimpleProps) {
-  const [opened, { toggle }] = useDisclosure(false);
+  // const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
   // const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -121,12 +121,12 @@ export function HeaderSimple({ links }: HeaderSimpleProps) {
           {items}
         </Group>
 
-        <Burger
+        {/* <Burger
           opened={opened}
           onClick={toggle}
           className={classes.burger}
           size="sm"
-        />
+        /> */}
         <Group>
           <ActionIcon
             variant="outline"
@@ -136,8 +136,8 @@ export function HeaderSimple({ links }: HeaderSimpleProps) {
           >
             {dark ? <IconSun size={18} /> : <IconMoonStars size={18} />}
           </ActionIcon>
+          <Button variant="outline">Signup</Button>
           <Button variant="outline">Signin</Button>
-          <Button variant="outline">SignUp</Button>
         </Group>
         {/* dark mode */}
       </Container>
