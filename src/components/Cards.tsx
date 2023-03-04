@@ -3,7 +3,6 @@ import {
   Card,
   Text,
   SimpleGrid,
-  UnstyledButton,
   Anchor,
   Group,
   rem,
@@ -20,7 +19,7 @@ import {
 import { Link } from "react-router-dom";
 import Layout from "./Layout";
 
-const mockdata = [
+const data = [
   {
     title: "Multiline input to PDF",
     icon: IconPdf,
@@ -31,21 +30,33 @@ const mockdata = [
     title: "Text file to PDF",
     icon: IconFileText,
     color: "indigo",
-    path: "/TextToPdf",
+    path: "/TextFileToPdf",
   },
-  { title: "Merge PDFs", icon: IconArrowMerge, color: "blue", path: "/MergePdf" },
-  { title: "Split PDF", icon: IconArrowsSplit2, color: "green", path: "/SplitPdf" },
-  { title: "Rempve PDF Pages", icon: IconFileX, color: "teal", path: "/RemovePdf" },
-  { title: "PDF to JPG", icon: IconJpg, color: "cyan", path: "/PdfToJpg" },
-  { title: "Coming Soon", icon: IconInfoCircle, color: "pink", path: "#" },
   {
-    title: "pdf to text",
+    title: "Merge PDFs",
+    icon: IconArrowMerge,
+    color: "blue",
+    path: "/MergePdfs",
+  },
+  {
+    title: "Split PDF",
+    icon: IconArrowsSplit2,
+    color: "green",
+    path: "/SplitPdf",
+  },
+  {
+    title: "Rempve PDF Pages",
+    icon: IconFileX,
+    color: "teal",
+    path: "/RemovePdfPages",
+  },
+  { title: "PDF to JPG", icon: IconJpg, color: "cyan", path: "/PdfToJpg" },
+  {
+    title: "Coming Soon",
     icon: IconInfoCircle,
     color: "pink",
-    path: "/pdf-to-text",
+    path: "#",
   },
-  // { title: "Payments", icon: IconCoin, color: "red" },
-  // { title: "Cashback", icon: IconCashBanknote, color: "orange" },
 ];
 
 const useStyles = createStyles((theme) => ({
@@ -72,7 +83,7 @@ const useStyles = createStyles((theme) => ({
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
     transition: "all 0.05s ease-in",
-    textDecoration:"none",
+    textDecoration: "none",
     color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
 
     "&:hover": {
@@ -89,7 +100,7 @@ const useStyles = createStyles((theme) => ({
 export default function ActionsGrid() {
   const { classes, theme } = useStyles();
 
-  const items = mockdata.map((item) => (
+  const items = data.map((item) => (
     <Link to={item.path} key={item.title} className={classes.item}>
       <item.icon color={theme.colors[item.color][6]} size="2rem" />
       <Text size="xs" mt={7}>
@@ -99,12 +110,8 @@ export default function ActionsGrid() {
   ));
 
   return (
-    <Layout headerOne>
-      <Card
-        // withBorder
-        radius="md"
-        className={classes.card}
-      >
+    <Layout headerOne headerTwo>
+      <Card radius="md" className={classes.card}>
         <Group position="apart">
           <Text className={classes.title}>Services</Text>
           <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}></Anchor>

@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "backup/App.tsx"  ]
+, "backup/App.tsx", "Misc/roots.tsx", "Misc/PdfToText.tsx", "Misc/Home.tsx", "src/react-app-env.d.ts", "Misc/setupTests.ts"  ]
 }

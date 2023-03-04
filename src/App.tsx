@@ -1,18 +1,24 @@
-// import * as React from 'react';
+// components/routes
+import ActionsGrid from "./components/Cards";
+import MultilineToPdf from "./routes/MultilineToPdf";
+import TextFileToPdf from "./routes/TextFileToPdf";
+import MergePdfs from "./routes/MergePdfs";
+import SplitPdf from "./routes/SplitPdf";
+import RemovePdfPages from "./routes/RemovePdfPages";
+import PdfToJpg from "./routes/PdfToJpg";
+import Error from "./components/Error";
+
+// Mantine imports
 import {
   MantineProvider,
   ColorSchemeProvider,
   ColorScheme,
 } from "@mantine/core";
-import { useState } from "react";
-
+// import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// components
-import ActionsGrid from "./components/Cards";
-import PdfToText from "./routes/PdfToText";
-import MultilineToPdf from "./routes/MultilineToPdf";
-import MergePdf from "./routes/MergePdf";
+// Localstorage imports
+import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 
 const router = createBrowserRouter([
   {
@@ -20,23 +26,48 @@ const router = createBrowserRouter([
     element: <ActionsGrid />,
   },
   {
-    path: "/pdf-to-text",
-    element: <PdfToText />,
-  },
-  {
     path: "/MultilineToPdf",
     element: <MultilineToPdf />,
   },
   {
-    path: "/MergePdf",
-    element: <MergePdf />,
-  }
+    path: "TextFileToPdf",
+    element: <TextFileToPdf />,
+  },
+  {
+    path: "/MergePdfs",
+    element: <MergePdfs />,
+  },
+  {
+    path: "/SplitPdf",
+    element: <SplitPdf />,
+  },
+  {
+    path: "/RemovePdfPages",
+    element: <RemovePdfPages />,
+  },
+  {
+    path: "/PdfToJpg",
+    element: <PdfToJpg />,
+  },
+  {
+    path: "*",
+    element: <Error />,
+  },
 ]);
 
 export default function App() {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+    key: "mantine-color-scheme",
+    defaultValue: "light",
+    getInitialValueInEffect: true,
+  });
+
+  // const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+
+  // hotkeys
+  useHotkeys([["mod+J", () => toggleColorScheme()]]);
 
   return (
     <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>

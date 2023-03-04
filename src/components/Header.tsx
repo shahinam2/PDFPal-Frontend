@@ -1,18 +1,8 @@
-import { useState } from "react";
-import {
-  createStyles,
-  Header,
-  Container,
-  Group,
-  // Burger,
-  Button,
-  // Image,
-} from "@mantine/core";
-// import { useDisclosure } from "@mantine/hooks";
-// import { MantineLogo } from "@mantine/ds";
+import { createStyles, Header, Container, Group, Button } from "@mantine/core";
 import DarkLogo from "../assets/logos/darkLogo.png";
 import LightLogo from "../assets/logos/lightLogo.png";
-// dark mode
+
+// dark mode imports
 import { ActionIcon, useMantineColorScheme } from "@mantine/core";
 import { IconSun, IconMoonStars } from "@tabler/icons";
 import { Link } from "react-router-dom";
@@ -30,12 +20,6 @@ const useStyles = createStyles((theme) => ({
       display: "none",
     },
   },
-
-  // burger: {
-  //   [theme.fn.largerThan("xs")]: {
-  //     display: "none",
-  //   },
-  // },
 
   link: {
     display: "block",
@@ -74,44 +58,16 @@ interface HeaderSimpleProps {
   links?: { link: string; label: string }[];
 }
 
-// const links = [
-//   { link: "#", label: "Home" },
-//   { link: "#", label: "Features" },
-//   { link: "#", label: "Pricing" },
-// ];
-// export function HeaderSimple({ links }: HeaderSimpleProps)
-
-export function HeaderSimple({ links }: HeaderSimpleProps) {
-  // const [opened, { toggle }] = useDisclosure(false);
-  // const [active, setActive] = useState(links[0].link);
+export default function HeaderSimple({ links }: HeaderSimpleProps) {
   const { classes } = useStyles();
-  // const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   // dark mode
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 
-  // const items = links.map((link) => (
-  //   <a
-  //     key={link.label}
-  //     href={link.link}
-  //     className={cx(classes.link, {
-  //       [classes.linkActive]: active === link.link,
-  //     })}
-  //     onClick={(event) => {
-  //       event.preventDefault();
-  //       setActive(link.link);
-  //     }}
-  //   >
-  //     {link.label}
-  //   </a>
-  // ));
-
   return (
     <Header height={60}>
       <Container className={classes.header}>
-        {/* <MantineLogo size={28} /> */}
-        {/* <DarkLogo size={28} /> */}
         <div>
           {colorScheme === "dark" ? (
             <Link to={"/"}>
@@ -123,16 +79,6 @@ export function HeaderSimple({ links }: HeaderSimpleProps) {
             </Link>
           )}
         </div>
-        {/* <Group spacing={5} className={classes.links}>
-          {items}
-        </Group> */}
-
-        {/* <Burger
-          opened={opened}
-          onClick={toggle}
-          className={classes.burger}
-          size="sm"
-        /> */}
         <Group>
           <ActionIcon
             variant="outline"
@@ -145,7 +91,6 @@ export function HeaderSimple({ links }: HeaderSimpleProps) {
           <Button variant="outline">Signup</Button>
           <Button variant="outline">Signin</Button>
         </Group>
-        {/* dark mode */}
       </Container>
     </Header>
   );
