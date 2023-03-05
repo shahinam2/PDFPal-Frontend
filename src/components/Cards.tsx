@@ -32,25 +32,25 @@ const btnInfoAndPaths = [
   {
     title: "Multiline input to PDF",
     icon: IconPdf,
-    color: "violet",
+    color: "teal",
     path: "/MultilineToPdf",
   },
   {
     title: "Text file to PDF",
     icon: IconFileText,
-    color: "indigo",
+    color: "red",
     path: "/TextFileToPdf",
   },
   {
     title: "Merge PDFs",
     icon: IconArrowMerge,
-    color: "blue",
+    color: "cyan",
     path: "/MergePdfs",
   },
   {
     title: "Split PDF",
     icon: IconArrowsSplit2,
-    color: "green",
+    color: "yellow",
     path: "/SplitPdf",
   },
   {
@@ -62,15 +62,15 @@ const btnInfoAndPaths = [
   {
     title: "PDF to JPG",
     icon: IconJpg,
-    color: "cyan",
+    color: "orange",
     path: "/PdfToJpg",
   },
-  {
-    title: "Coming Soon",
-    icon: IconInfoCircle,
-    color: "pink",
-    path: "#",
-  },
+  // {
+  //   title: "Coming Soon",
+  //   icon: IconInfoCircle,
+  //   color: "pink",
+  //   path: "#",
+  // },
 ];
 
 const useStyles = createStyles((theme) => ({
@@ -86,7 +86,7 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 700,
   },
 
-  item: {
+  activeItem: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -109,13 +109,28 @@ const useStyles = createStyles((theme) => ({
       transform: "scale(1)",
     },
   },
+
+  disabledItem: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    borderRadius: theme.radius.md,
+    height: rem(90),
+    backgroundColor:
+      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+    textDecoration: "none",
+    color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
+  },
 }));
+
 
 export default function ActionsGrid() {
   const { classes, theme } = useStyles();
 
   const items = btnInfoAndPaths.map((item) => (
-    <Link to={item.path} key={item.title} className={classes.item}>
+    <Link to={item.path} key={item.title} className={classes.activeItem}>
       <item.icon color={theme.colors[item.color][6]} size="2rem" />
       <Text size="xs" mt={7}>
         {item.title}
@@ -140,6 +155,13 @@ export default function ActionsGrid() {
         </Group>
         <SimpleGrid cols={3} mt="md">
           {items}
+          <Link to={"#"} key={"Coming Soon"} className={classes.disabledItem}>
+            <IconInfoCircle color={theme.colors["gray"][6]} size="2rem" />
+            <Text size="xs" mt={7} >
+              {"Coming Soon"}
+            </Text>
+          </Link>
+
         </SimpleGrid>
       </Card>
     </Layout>
