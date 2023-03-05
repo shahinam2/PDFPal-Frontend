@@ -6,6 +6,8 @@ import {
   Anchor,
   Group,
   rem,
+  Box,
+  Title,
 } from "@mantine/core";
 import {
   IconPdf,
@@ -19,7 +21,7 @@ import {
 import { Link } from "react-router-dom";
 import Layout from "./Layout";
 
-const data = [
+const btnInfoAndPaths = [
   {
     title: "Multiline input to PDF",
     icon: IconPdf,
@@ -50,7 +52,12 @@ const data = [
     color: "teal",
     path: "/RemovePdfPages",
   },
-  { title: "PDF to JPG", icon: IconJpg, color: "cyan", path: "/PdfToJpg" },
+  {
+    title: "PDF to JPG",
+    icon: IconJpg,
+    color: "cyan",
+    path: "/PdfToJpg",
+  },
   {
     title: "Coming Soon",
     icon: IconInfoCircle,
@@ -100,7 +107,7 @@ const useStyles = createStyles((theme) => ({
 export default function ActionsGrid() {
   const { classes, theme } = useStyles();
 
-  const items = data.map((item) => (
+  const items = btnInfoAndPaths.map((item) => (
     <Link to={item.path} key={item.title} className={classes.item}>
       <item.icon color={theme.colors[item.color][6]} size="2rem" />
       <Text size="xs" mt={7}>
@@ -110,7 +117,15 @@ export default function ActionsGrid() {
   ));
 
   return (
-    <Layout headerOne headerTwo>
+    <Layout>
+      <Box mb={100}>
+        <Title order={1} align="center">
+          Welcome to PDFPal!
+        </Title>
+        <Title order={5} align="center">
+          Your PDF Manipulation Tool
+        </Title>
+      </Box>
       <Card radius="md" className={classes.card}>
         <Group position="apart">
           <Text className={classes.title}>Services</Text>

@@ -71,10 +71,10 @@ export default function Error() {
       </Box>
 
       <Stack spacing="xl" h={200}>
-        <Title order={1}>404</Title>
+        <Title order={1} size="3rem">404</Title>
         <Title order={3}>Page not found!</Title>
         <Link to="/">
-          <Button color="indigo" size="md">
+          <Button color="indigo" size="md" mt={10}>
             Go to Home
           </Button>
         </Link>

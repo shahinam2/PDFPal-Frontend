@@ -9,14 +9,14 @@ import {
   Button,
   Title,
 } from "@mantine/core";
-import { IconUpload, IconBookUpload  , IconX } from "@tabler/icons-react";
-import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from "@mantine/dropzone";
+import { IconUpload, IconBookUpload, IconX } from "@tabler/icons-react";
+import { Dropzone, DropzoneProps, PDF_MIME_TYPE } from "@mantine/dropzone";
 
 export default function MergePdfs(props: Partial<DropzoneProps>) {
   const theme = useMantineTheme();
 
   return (
-    <Layout removeHeaders>
+    <Layout>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <Title order={1} align="center">
           PDF Merger
@@ -30,7 +30,7 @@ export default function MergePdfs(props: Partial<DropzoneProps>) {
         onDrop={(files) => console.log("accepted files", files)}
         onReject={(files) => console.log("rejected files", files)}
         maxSize={3 * 1024 ** 2}
-        accept={IMAGE_MIME_TYPE}
+        accept={PDF_MIME_TYPE}
         {...props}
       >
         <Group
@@ -57,7 +57,7 @@ export default function MergePdfs(props: Partial<DropzoneProps>) {
             />
           </Dropzone.Reject>
           <Dropzone.Idle>
-            <IconBookUpload   size="3.2rem" stroke={1.5} />
+            <IconBookUpload size="3.2rem" stroke={1.5} />
           </Dropzone.Idle>
 
           <div>

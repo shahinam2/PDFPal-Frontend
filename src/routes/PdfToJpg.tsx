@@ -10,13 +10,13 @@ import {
 } from "@mantine/core";
 import { IconUpload, IconCloudUpload, IconX } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
-import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from "@mantine/dropzone";
+import { Dropzone, DropzoneProps, PDF_MIME_TYPE } from "@mantine/dropzone";
 
 export default function JpgToPdf(props: Partial<DropzoneProps>) {
   const theme = useMantineTheme();
 
   return (
-    <Layout removeHeaders>
+    <Layout >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <Title order={1} align="center">
           PDF to JPG Converter
@@ -30,7 +30,7 @@ export default function JpgToPdf(props: Partial<DropzoneProps>) {
         onDrop={(files) => console.log("accepted files", files)}
         onReject={(files) => console.log("rejected files", files)}
         maxSize={3 * 1024 ** 2}
-        accept={IMAGE_MIME_TYPE}
+        accept={PDF_MIME_TYPE}
         {...props}
       >
         <Group

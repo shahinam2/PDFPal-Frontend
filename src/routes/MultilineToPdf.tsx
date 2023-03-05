@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 
 export default function MultilineToPdf() {
   return (
-    <Layout removeHeaders>
+    <Layout >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <Title order={1} align="center" >
           Multiline Text to PDF Converter

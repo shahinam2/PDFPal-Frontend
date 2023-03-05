@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
-import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from "@mantine/dropzone";
+import { Dropzone, DropzoneProps } from "@mantine/dropzone";
 import {
   Group,
   Text,
@@ -10,13 +10,19 @@ import {
   Button,
   Title,
 } from "@mantine/core";
-import { IconUpload, IconAlignBoxLeftTop , IconX } from "@tabler/icons-react";
+import { IconUpload, IconAlignBoxLeftTop, IconX } from "@tabler/icons-react";
+
+// To accext only .txt files
+const MIME_TYPES = {
+  txt: 'text/plain',
+}
+const TXT_MIME_TYPE = [MIME_TYPES.txt];
 
 export default function TextFileToPdf(props: Partial<DropzoneProps>) {
   const theme = useMantineTheme();
 
   return (
-    <Layout removeHeaders>
+    <Layout>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <Title order={1} align="center">
           Text file to PDF Converter
@@ -30,7 +36,8 @@ export default function TextFileToPdf(props: Partial<DropzoneProps>) {
         onDrop={(files) => console.log("accepted files", files)}
         onReject={(files) => console.log("rejected files", files)}
         maxSize={3 * 1024 ** 2}
-        accept={IMAGE_MIME_TYPE}
+        // accept={MS_WORD_MIME_TYPE}
+        accept={TXT_MIME_TYPE}
         {...props}
       >
         <Group
@@ -57,7 +64,7 @@ export default function TextFileToPdf(props: Partial<DropzoneProps>) {
             />
           </Dropzone.Reject>
           <Dropzone.Idle>
-            <IconAlignBoxLeftTop  size="3.2rem" stroke={1.5} />
+            <IconAlignBoxLeftTop size="3.2rem" stroke={1.5} />
           </Dropzone.Idle>
 
           <div>
