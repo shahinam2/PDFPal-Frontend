@@ -1,3 +1,4 @@
+// mantine imports
 import {
   createStyles,
   Card,
@@ -9,6 +10,8 @@ import {
   Box,
   Title,
 } from "@mantine/core";
+
+// tabler svg icons import
 import {
   IconPdf,
   IconFileText,
@@ -18,7 +21,11 @@ import {
   IconJpg,
   IconInfoCircle,
 } from "@tabler/icons-react";
+
+// react-router-link import
 import { Link } from "react-router-dom";
+
+// layout import
 import Layout from "./Layout";
 
 const btnInfoAndPaths = [

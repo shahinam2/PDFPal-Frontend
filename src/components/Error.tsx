@@ -1,5 +1,10 @@
+// CSS import
 import "./Error.css";
+
+// Mantine imports
 import { Button, Title, Box, Stack } from "@mantine/core";
+
+// react-router-link import
 import { Link } from "react-router-dom";
 
 export default function Error() {

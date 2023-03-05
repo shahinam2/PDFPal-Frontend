@@ -1,3 +1,4 @@
+// mantine imports
 import {
   createStyles,
   Container,
@@ -12,6 +13,8 @@ import {
   IconBrandTwitter,
   IconBrandInstagram,
 } from "@tabler/icons-react";
+
+// svg import
 import { IconHeartFilled } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({

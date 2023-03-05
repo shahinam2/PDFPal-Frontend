@@ -1,5 +1,4 @@
-import Layout from "../components/Layout";
-import { Link } from "react-router-dom";
+// mantine imports
 import {
   Group,
   Text,
@@ -12,6 +11,12 @@ import {
 } from "@mantine/core";
 import { IconUpload, IconBookUpload, IconX } from "@tabler/icons-react";
 import { Dropzone, DropzoneProps, PDF_MIME_TYPE } from "@mantine/dropzone";
+
+// react-router-link import
+import { Link } from "react-router-dom";
+
+// layout import
+import Layout from "../components/Layout";
 
 export default function RemovePdfPages(props: Partial<DropzoneProps>) {
   const theme = useMantineTheme();

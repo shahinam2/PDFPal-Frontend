@@ -14,12 +14,12 @@ import {
   ColorSchemeProvider,
   ColorScheme,
 } from "@mantine/core";
-// import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Localstorage imports
 import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 
+// Routes
 const router = createBrowserRouter([
   {
     path: "/",
@@ -62,7 +62,6 @@ export default function App() {
     getInitialValueInEffect: true,
   });
 
-  // const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 

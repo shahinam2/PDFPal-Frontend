@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+// mantine imports
 import {
   Group,
   Text,
@@ -9,8 +9,13 @@ import {
   Button,
 } from "@mantine/core";
 import { IconUpload, IconCloudUpload, IconX } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
 import { Dropzone, DropzoneProps, PDF_MIME_TYPE } from "@mantine/dropzone";
+
+// react-router-link import
+import { Link } from "react-router-dom";
+
+// layout import
+import Layout from "../components/Layout";
 
 export default function JpgToPdf(props: Partial<DropzoneProps>) {
   const theme = useMantineTheme();

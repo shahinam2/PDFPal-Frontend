@@ -1,5 +1,10 @@
+// mantine imports
 import { Box, Title, Textarea, Button } from "@mantine/core";
+
+// react-router-link import
 import { Link } from "react-router-dom";
+
+// layout import
 import Layout from "../components/Layout";
 
 export default function MultilineToPdf() {

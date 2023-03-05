@@ -1,4 +1,7 @@
+// mantine imports
 import { Container, Box } from "@mantine/core";
+
+// components
 import HeaderSimple from "../components/Header";
 import FooterSocial from "../components/Footer";
 

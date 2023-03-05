@@ -1,5 +1,4 @@
-import Layout from "../components/Layout";
-import { Link } from "react-router-dom";
+// mantine imports
 import { Dropzone, DropzoneProps } from "@mantine/dropzone";
 import {
   Group,
@@ -12,7 +11,13 @@ import {
 } from "@mantine/core";
 import { IconUpload, IconAlignBoxLeftTop, IconX } from "@tabler/icons-react";
 
-// To accext only .txt files
+// react-router-link import
+import { Link } from "react-router-dom";
+
+// layout import
+import Layout from "../components/Layout";
+
+// To accept only .txt files
 const MIME_TYPES = {
   txt: 'text/plain',
 }

@@ -1,11 +1,16 @@
+// mantine imports
 import { createStyles, Header, Container, Group, Button } from "@mantine/core";
+
+// react-router imports
+import { Link } from "react-router-dom";
+
+// logo imports
 import DarkLogo from "../assets/logos/darkLogo.png";
 import LightLogo from "../assets/logos/lightLogo.png";
 
 // dark mode imports
 import { ActionIcon, useMantineColorScheme } from "@mantine/core";
 import { IconSun, IconMoonStars } from "@tabler/icons";
-import { Link } from "react-router-dom";
 
 const useStyles = createStyles((theme) => ({
   header: {
