@@ -8,7 +8,7 @@ import {
   Title,
   Button,
 } from "@mantine/core";
-import { IconUpload, IconPhoto, IconX } from "@tabler/icons-react";
+import { IconUpload, IconCloudUpload, IconX } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from "@mantine/dropzone";
 
@@ -57,7 +57,7 @@ export default function JpgToPdf(props: Partial<DropzoneProps>) {
             />
           </Dropzone.Reject>
           <Dropzone.Idle>
-            <IconPhoto size="3.2rem" stroke={1.5} />
+            <IconCloudUpload size="3.2rem" stroke={1.5} />
           </Dropzone.Idle>
 
           <div>

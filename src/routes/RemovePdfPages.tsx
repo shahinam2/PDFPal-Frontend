@@ -10,7 +10,7 @@ import {
   Button,
   NumberInput,
 } from "@mantine/core";
-import { IconUpload, IconPhoto, IconX } from "@tabler/icons-react";
+import { IconUpload, IconBookUpload, IconX } from "@tabler/icons-react";
 import { Dropzone, DropzoneProps, IMAGE_MIME_TYPE } from "@mantine/dropzone";
 
 export default function RemovePdfPages(props: Partial<DropzoneProps>) {
@@ -57,7 +57,7 @@ export default function RemovePdfPages(props: Partial<DropzoneProps>) {
               />
             </Dropzone.Reject>
             <Dropzone.Idle>
-              <IconPhoto size="3.2rem" stroke={1.5} />
+              <IconBookUpload size="3.2rem" stroke={1.5} />
             </Dropzone.Idle>
 
             <div>

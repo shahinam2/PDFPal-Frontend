@@ -10,7 +10,7 @@ import {
   Button,
   Title,
 } from "@mantine/core";
-import { IconUpload, IconPhoto, IconX } from "@tabler/icons-react";
+import { IconUpload, IconAlignBoxLeftTop , IconX } from "@tabler/icons-react";
 
 export default function TextFileToPdf(props: Partial<DropzoneProps>) {
   const theme = useMantineTheme();
@@ -57,7 +57,7 @@ export default function TextFileToPdf(props: Partial<DropzoneProps>) {
             />
           </Dropzone.Reject>
           <Dropzone.Idle>
-            <IconPhoto size="3.2rem" stroke={1.5} />
+            <IconAlignBoxLeftTop  size="3.2rem" stroke={1.5} />
           </Dropzone.Idle>
 
           <div>
