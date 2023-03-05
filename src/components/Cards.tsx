@@ -13,7 +13,8 @@ import {
 
 // tabler svg icons import
 import {
-  IconPdf,
+  // IconPdf,
+  IconAlignLeft,
   IconFileText,
   IconArrowMerge,
   IconArrowsSplit2,
@@ -31,7 +32,7 @@ import Layout from "./Layout";
 const btnInfoAndPaths = [
   {
     title: "Multiline input to PDF",
-    icon: IconPdf,
+    icon: IconAlignLeft,
     color: "teal",
     path: "/MultilineToPdf",
   },
