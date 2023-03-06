@@ -67,11 +67,10 @@ export default function RemovePdfPages(props: Partial<DropzoneProps>) {
 
             <div>
               <Text size="xl" inline>
-                Drop your PDF file here
+                Drop your PDF file here or click to select your file
               </Text>
               <Text size="sm" color="dimmed" inline mt={7}>
-                Attach your PDF file here, your file should not exceed
-                5mb
+                Your file should not exceed 5MB
               </Text>
             </div>
           </Group>

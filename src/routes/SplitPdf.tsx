@@ -21,7 +21,7 @@ export default function SplitPdf(props: Partial<DropzoneProps>) {
   const theme = useMantineTheme();
 
   return (
-    <Layout >
+    <Layout>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <Title order={1} align="center">
           PDF Splitter
@@ -63,15 +63,15 @@ export default function SplitPdf(props: Partial<DropzoneProps>) {
             />
           </Dropzone.Reject>
           <Dropzone.Idle>
-            <IconBookUpload  size="3.2rem" stroke={1.5} />
+            <IconBookUpload size="3.2rem" stroke={1.5} />
           </Dropzone.Idle>
 
           <div>
             <Text size="xl" inline>
-              Drag your PDF here or click to select your file
+              Drop your PDF file here or click to select your file
             </Text>
             <Text size="sm" color="dimmed" inline mt={7}>
-              Attach only one file, your file should not exceed 5mb
+              Your selected file should not exceed 5MB
             </Text>
           </div>
         </Group>

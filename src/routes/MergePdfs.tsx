@@ -67,11 +67,10 @@ export default function MergePdfs(props: Partial<DropzoneProps>) {
 
           <div>
             <Text size="xl" inline>
-              Drag your PDF files here or click to select files
+              Drop your PDF files here or click to select files
             </Text>
             <Text size="sm" color="dimmed" inline mt={7}>
-              Attach as many PDF files as you like, each file should not exceed
-              5mb
+              Attach as many PDF files as you like, each file should not exceed 5MB
             </Text>
           </div>
         </Group>

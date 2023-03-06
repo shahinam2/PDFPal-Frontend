@@ -74,10 +74,10 @@ export default function TextFileToPdf(props: Partial<DropzoneProps>) {
 
           <div>
             <Text size="xl" inline>
-              Drag your Text file here or click to select your file
+              Drop your Text file here or click to select your file
             </Text>
             <Text size="sm" color="dimmed" inline mt={7}>
-              Please attach only one text file
+              Please attach only one text file and it should be less than 5MB
             </Text>
           </div>
         </Group>

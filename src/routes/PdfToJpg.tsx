@@ -67,10 +67,10 @@ export default function JpgToPdf(props: Partial<DropzoneProps>) {
 
           <div>
             <Text size="xl" inline>
-              Drag Your PDF file here or click to select your file
+              Drop Your PDF file here or click to select your file
             </Text>
             <Text size="sm" color="dimmed" inline mt={7}>
-              Attach only one files, your file should not exceed 5mb
+              Attach only one files, your file should not exceed 5MB
             </Text>
           </div>
         </Group>
