@@ -33,13 +33,13 @@ const btnInfoAndPaths = [
   {
     title: "Multiline input to PDF",
     icon: IconAlignLeft,
-    color: "teal",
+    color: "violet",
     path: "/MultilineToPdf",
   },
   {
     title: "Text file to PDF",
     icon: IconFileText,
-    color: "red",
+    color: "teal",
     path: "/TextFileToPdf",
   },
   {
@@ -57,7 +57,7 @@ const btnInfoAndPaths = [
   {
     title: "Rempve PDF Pages",
     icon: IconFileX,
-    color: "teal",
+    color: "red",
     path: "/RemovePdfPages",
   },
   {
