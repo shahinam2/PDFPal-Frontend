@@ -94,11 +94,13 @@ export default function RemovePdfPages(props: Partial<DropzoneProps>) {
             mt="xl"
             label="Start Page"
             placeholder="Your page number here"
+            min={0}
           />
           <NumberInput
             mt="xl"
             label="End Page"
             placeholder="Your page number here"
+            min={0}
           />
           <Button color="orange" size="md" mt={10}>
             Remove
