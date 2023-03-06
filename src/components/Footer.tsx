@@ -55,7 +55,7 @@ export default function FooterSocial() {
       <Container className={classes.inner}>
         {/* <MantineLogo size={28} /> */}
         <Text sx={{ display: "flex", alignItems: "center", gap: "3px" }}>
-          Made with <IconHeartFilled size={15} color="blue" /> in BHH
+          Made with <IconHeartFilled size={15} style={{color:"red"}} /> in BHH
         </Text>
         <Code sx={{ fontWeight: 700 }}>Version v0.1</Code>
         <Group spacing={0} className={classes.links} position="right" noWrap>
